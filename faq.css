@@ -1,0 +1,29 @@
+body {
+	font-family: sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	background-color: orange;
+	padding: 10px;
+}
+
+h1 {
+	margin: 0;
+	color: white;
+}
+
+.faq-item {
+	margin: 10px 0;
+}
+
+.faq-question {
+	cursor: pointer;
+}
+
+.faq-answer {
+	display: none;
+	margin: 0;
+	padding: 0;
+}
