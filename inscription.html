@@ -6,23 +6,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 
-  <script>
-
-document.querySelectorAll("input[type='submit']").forEach(function(button) {
-    button.addEventListener("click", function(event) {
-      event.preventDefault();
-      if (this.value === "Sign Up") {
-        window.location.href = "signup.html";
-      } else if (this.value === "Login") {
-        window.location.href = "connexion.html";
-      }
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("input[type='submit']").forEach(function(button) {
+      button.addEventListener("click", function(event) {
+        event.preventDefault();
+        if (this.value === "Sign Up") {
+          window.location.href = ".html";
+        } else if (this.value === "Login") {
+          window.location.href = "connexion.html";
+        }
+      });
     });
   });
+</script>
 
 
-</script>
- 
-</script>
 
 
 <body>
@@ -41,7 +40,7 @@ document.querySelectorAll("input[type='submit']").forEach(function(button) {
     <input type="email" placeholder="Enter your email" required>
     <input type="password" placeholder="Enter your password" required>
     <input type="submit" value="Sign Up">
-    <input type="submit" value="Login" a href="connexion.html">
+    <input type="submit" value="Login">
   </form>
   
   
