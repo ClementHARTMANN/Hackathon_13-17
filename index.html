@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <form>
+        <fieldset >
+            <div class="row">
+                <div class="mb-3">
+                    <h5>Quelle est votre objectif ?</h5><br>
+                    <div class="form-check" name="objectif">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="perdrePoids" checked>
+                        <label class="form-check-label" for="perdrePoids">
+                            Perdre du poids
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="maintenirPoids">
+                        <label class="form-check-label" for="maintenirPoids">
+                            Maintenir son poids
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="prendrePoids">
+                        <label class="form-check-label" for="prendrePoids">
+                            Prendre du poids
+                        </label>
+                    </div><br>
+
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="activité">
+                        <option selected>Quelle est votre degré d'activité ?</option>
+                        <option value="1">Sédentaire : Peu ou pas de d'exercice physique et travail de bureau.</option>
+                        <option value="2">Légèrement actif : Exercice ou sport léger 1 à 3 fois par semaine.</option>
+                        <option value="3">Modérément actif : Exercice ou sport modéré 3 à 5 fois par semaine.</option>
+                        <option value="4">Très actif : Exercice ou sport intense 6 à 7 fois par semaine.</option>
+                        <option value="5">Extrêmement actif : Exercice ou sport quotidien intense et travail physique.</option>
+                    </select><br>
+
+                    <div class="form-check" name="sexe">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="femme" >
+                <label class="form-check-label" for="femme">
+                    Femme
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="homme">
+                <label class="form-check-label" for="homme">
+                    Homme
+                </label>
+            </div><br>
+
+            <input class="form-control" type="text" placeholder="Quelle âge avez-vous ?" name="age" aria-label="default input example"><br>
+        
+            <div>
+                <input class="form-control" type="text" placeholder="Quelle est votre taille ?" name="taille" aria-label="default input example">
+                <div class="form-text">Veuillez entrez votre en taille en cm.</div>
+            </div><br>
+
+            <div>
+                <input class="form-control" type="text" placeholder="Quelle est votre poids ?" name="poids" aria-label="default input example">
+                <div class="form-text">Veuillez entrez votre en poids en kg.</div>
+            </div><br>
+
+            <div>
+                <input class="form-control" type="text" placeholder="Quelle poids souhaitez vous attendre ?" name="poids" aria-label="default input example">
+                <div class="form-text">Veuillez entrez votre en poids en kg.</div>
+            </div><br>
+
+            <button type="button" class="btn btn-success">Success</button>
+        </div>
+    </div> 
+</fieldset>
+</form>
+    
+</body>
+</html>
