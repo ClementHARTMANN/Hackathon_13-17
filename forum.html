@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header id="header">
+        <h1>Welcome to Healthy Eating App</h1>
+        <h2>Eat Healthy, Live Better</h2>
+    </header>
+
+    <div id="messages"></div>
+    <form id="message-form" method="post" enctype="multipart/form-data">
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Tapez votre message" id="message"></textarea>
+            <label for="floatingTextarea">Tapez votre message</label>
+        </div><br>
+
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" id="formFile">
+        </div><br>
+
+        <button type="submit" class="btn btn-success">Envoyer</button>
+    </form>
+<!-- 
+    $(document).on("submit", "#message-form", function(event) {
+        event.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            url: "process-message.php",
+            type: "POST",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                $("#messages").prepend(response);
+                $("#message-form")[0].reset();
+            }
+        });
+      });
+      
+      // Rafraîchissement automatique des messages
+      setInterval(function() {
+        $.ajax({
+            url: "get-messages.php",
+            type: "GET",
+            cache: false,
+            success: function(response) {
+                $("#messages").html(response);
+            }
+        });
+      }, 5000);
+      
+      // Ajout du message de Pierre
+      var message = {
+        username: "Pierre",
+        message: "Comment perdre du poids ?"
+      };
+      var messageHtml = '<div class="message">' +
+                      '<div class="message-username">' + message.username + '</div>' +
+                      '<div class="message-text">' + message.message + '</div>' +
+                      '</div>';
+      $("#messages").append(messageHtml); -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js%22%3E"></script>
+    <script src="forum.js"></script>
+    
+</body>
+</html>
+

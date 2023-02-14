@@ -17,96 +17,19 @@
         <h1>Welcome to Healthy Eating App</h1>
         <h2>Eat Healthy, Live Better</h2>
     </header>
-    
-    <form>
-        <fieldset >
-            <div class="row">
-                <div class="mb-3" id="objectif">
-                    <h5>Bonjour, "Nom".</h5><br>
-                    <h6>Quelle est votre objectif ?</h6><br>
-                    <div class="form-check1" name="objectif">
-                        <input class="form-check-input" type="radio" name="poids" id="perdrePoids" checked>
-                        <label class="form-check-label" for="perdrePoids">
-                            Perdre du poids
-                        </label>
-                    </div>
-                    <div class="form-check1">
-                        <input class="form-check-input" type="radio" name="poids" id="maintenirPoids">
-                        <label class="form-check-label" for="maintenirPoids">
-                            Maintenir son poids
-                        </label>
-                    </div>
-                    <div class="form-check1">
-                        <input class="form-check-input" type="radio" name="poids" id="prendrePoids">
-                        <label class="form-check-label" for="prendrePoids">
-                            Prendre du poids
-                        </label>
-                    </div><br>
 
-                    <div>
-                        <input class="form-control" type="text" placeholder="Quelle poids souhaitez vous atteindre ?" name="poidsactuel" aria-label="default input example">
-                        <div class="form-text">Veuillez entrez votre en poids en kg.</div>
-                    </div><br>
-
-                    <h6>Votre activité</h6><br>
-
-                    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="activité">
-                        <option selected>Quelle est votre degré d'activité ?</option>
-                        <option value="1">Sédentaire : Peu ou pas de d'exercice physique et travail de bureau.</option>
-                        <option value="2">Légèrement actif : Exercice ou sport léger 1 à 3 fois par semaine.</option>
-                        <option value="3">Modérément actif : Exercice ou sport modéré 3 à 5 fois par semaine.</option>
-                        <option value="4">Très actif : Exercice ou sport intense 6 à 7 fois par semaine.</option>
-                        <option value="5">Extrêmement actif : Exercice ou sport quotidien intense et travail physique.</option>
-                    </select><br>
-
-                    <div class="h4 pb-2 mb-4 text-danger border-bottom border-dark"></div><br>
-                    <h5>A propos de vous</h5><br>
-                    <h6>Vous êtes : </h6>
-
-                    <div class="form-check2" name="sexe">
-                        <input class="form-check-input" type="radio" name="sexe" id="femme" >
-                        <label class="form-check-label" for="femme">
-                            Femme
-                        </label>
-                    </div>
-                    <div class="form-check2">
-                        <input class="form-check-input" type="radio" name="sexe" id="homme">
-                        <label class="form-check-label" for="homme">
-                            Homme
-                        </label>
-                    </div><br>
-
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Quelle âge avez-vous ?" id="age"></textarea>
-                        <label for="floatingTextarea">Quelle âge avez-vous ?</label>
-                    </div><br>
-
-                   <div class="form-floating">
-                        <textarea class="form-control" placeholder="Quelle est votre taille ?" id="taille"></textarea>
-                        <label for="floatingTextarea">Quelle est votre taille ?</label>
-                        <div class="form-text">Veuillez entrez votre taille en cm.</div>
-                    </div><br>
-
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Quelle est votre poids ?" id="poids"></textarea>
-                        <label for="floatingTextarea">Quelle est votre poids ?</label>
-                        <div class="form-text">Veuillez entrez votre poids en kg.</div>
-                    </div><br>
-
-                    <div class="col-12">
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                          <label class="form-check-label" for="invalidCheck2">
-                            S'accepte que mes informations soient collectés à des fins non lucratives.
-                          </label>
-                        </div>
-                    </div><br>
-
-                    <button type="button" class="btn btn-success">Commencer</button>
-                </div>
-            </div> 
-        </fieldset>
-    </form>
+    <div id="Scanner">
+        <h5>Scanner un code barre</h5><br>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title">Scanner</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Scanner les codes barres de vos paquets</h6>
+            <p class="card-text">Respectez vos engagement en vérifiant les ingrédiants de vos aliments, afin de vous assurer de respecter vos engagement.</p>
+            <a href="camera.html" class="card-link">Scanner un produit</a>
+            <a href="#" class="card-link">Another link</a>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
