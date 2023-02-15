@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <link href="css/body.css" rel="stylesheet">
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
@@ -44,11 +46,52 @@
     <form>
         <fieldset >
             <div class="row">
-                <div class="mb-3" id="objectif">
-                    <h5>Avant d'aller plus loin, nous avons besoins de mieux vous connaître.</h5><br>
+                <div class="mb-3" id="info">
+                    <h5>A propos de vous</h5><br>
+
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Comment vous appelez vous ?" id="name"></textarea>
+                        <label for="floatingTextarea">Comment vous appelez vous ?</label>
+                    </div><br>
+
+
+                    <h6>Vous êtes : </h6>
+
+                    <div class="form-check2" name="sexe">
+                        <input class="form-check-input" type="radio" name="sexe" id="femme" >
+                        <label class="form-check-label" for="femme">
+                            Femme
+                        </label>
+                    </div>
+                    <div class="form-check2">
+                        <input class="form-check-input" type="radio" name="sexe" id="homme">
+                        <label class="form-check-label" for="homme">
+                            Homme
+                        </label>
+                    </div><br>
+
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Quelle âge avez-vous ?" id="age"></textarea>
+                        <label for="floatingTextarea">Quelle âge avez-vous ?</label>
+                    </div><br>
+
+                   <div class="form-floating">
+                        <textarea class="form-control" placeholder="Quelle est votre taille ?" id="taille"></textarea>
+                        <label for="floatingTextarea">Quelle est votre taille ?</label>
+                        <div class="form-text">Veuillez entrez votre taille en cm.</div>
+                    </div><br>
+
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Quelle est votre poids ?" id="poids"></textarea>
+                        <label for="floatingTextarea">Quelle est votre poids ?</label>
+                        <div class="form-text">Veuillez entrez votre poids en kg.</div>
+                    </div><br>
+
+                    <div class="h4 pb-2 mb-4 text-danger border-bottom border-dark"></div><br>
+                    
                     <h6>Quelle est votre objectif ?</h6><br>
                     <div class="form-check1" name="objectif">
-                        <input class="form-check-input" type="radio" name="poids" id="perdrePoids" checked>
+                        <input class="form-check-input" type="radio" name="poids" id="perdrePoids">
                         <label class="form-check-label" for="perdrePoids">
                             Perdre du poids
                         </label>
@@ -81,40 +124,6 @@
                         <option value="4">Très actif : Exercice ou sport intense 6 à 7 fois par semaine.</option>
                         <option value="5">Extrêmement actif : Exercice ou sport quotidien intense et travail physique.</option>
                     </select><br>
-
-                    <div class="h4 pb-2 mb-4 text-danger border-bottom border-dark"></div><br>
-                    <h5>A propos de vous</h5><br>
-                    <h6>Vous êtes : </h6>
-
-                    <div class="form-check2" name="sexe">
-                        <input class="form-check-input" type="radio" name="sexe" id="femme" >
-                        <label class="form-check-label" for="femme">
-                            Femme
-                        </label>
-                    </div>
-                    <div class="form-check2">
-                        <input class="form-check-input" type="radio" name="sexe" id="homme">
-                        <label class="form-check-label" for="homme">
-                            Homme
-                        </label>
-                    </div><br>
-
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Quelle âge avez-vous ?" id="age"></textarea>
-                        <label for="floatingTextarea">Quelle âge avez-vous ?</label>
-                    </div><br>
-
-                   <div class="form-floating">
-                        <textarea class="form-control" placeholder="Quelle est votre taille ?" id="taille"></textarea>
-                        <label for="floatingTextarea">Quelle est votre taille ?</label>
-                        <div class="form-text">Veuillez entrez votre taille en cm.</div>
-                    </div><br>
-
-                    <div class="form-floating">
-                        <textarea class="form-control" placeholder="Quelle est votre poids ?" id="poids"></textarea>
-                        <label for="floatingTextarea">Quelle est votre poids ?</label>
-                        <div class="form-text">Veuillez entrez votre poids en kg.</div>
-                    </div><br>
 
                     <div class="col-12">
                         <div class="form-check">

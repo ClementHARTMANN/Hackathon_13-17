@@ -1,0 +1,10 @@
+body {
+    background-color: #fcfcfc;
+    font-family: Arial, sans-serif;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgba(7, 33, 46, 0.7), rgba(7, 33, 46, 0.7)),url(https://www.bienmanger.com/tinyMceData/images/contents/600/content_lg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: auto;
+  }

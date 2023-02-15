@@ -315,16 +315,12 @@ h6,
 }
 
 /* Marcel */
-body {
-    background-color: #fcfcfc;
-    font-family: Arial, sans-serif;
-    background-position: center;
-    background-size: cover;
-    background-image: linear-gradient(rgba(7, 33, 46, 0.7), rgba(7, 33, 46, 0.7)),url(https://www.bienmanger.com/tinyMceData/images/contents/600/content_lg.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
+
   
+#bodycamera {
+    background-color: #FFFFFF;
+    
+  }
   
   /* Add styles for the header */
   header {
@@ -461,5 +457,8 @@ body {
       transform: translateY(-3px);
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
-    
-    
+
+/* Page Camera */
+#cameratext{
+    margin-top: -30em;
+}
