@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Scanner de codes barres avec reconnaissance d'objet</title>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.0.0/dist/coco-ssd.min.js"></script>
+</head>
+<body>
+    <h1>Scanner de codes barres avec reconnaissance d'objet</h1>
+    <div id="scanner-container"></div>
+    <p id="product-message"></p>
+    <script>
+        // Charger le modèle de détection d'objets de TensorFlow.js
+        const model = cocoSsd.load();
+
+        // Configurer QuaggaJS pour scanner les codes barres
+        Quagga.init({
+            inputStream: {
+                name: "Live",
+                type: "LiveStream",
+                target: document.querySelector("#scanner-container")
+            },
+            decoder: {
+                readers: ["ean_reader", "upc_reader", "code_128_reader"]
+            }
+        }, function(err) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+
+            console.log("QuaggaJS prêt à scanner les codes barres.");
+
+            // Démarrer la caméra
+            Quagga.start();
+
+            // Démarrer la détection d'objets avec TensorFlow.js
+            detectObjects();
+        });
+
+        // Détecter les objets dans le flux vidéo de la caméra
+        async function detectObjects() {
+            // Obtenir le flux vidéo de la caméra
+            const video = document.querySelector("video");
+
+            // Attendre que le modèle de détection d'objets soit chargé
+            await model;
+
+            // Boucle infinie pour détecter les objets
+            while (true) {
+                // Attendre la prochaine image du flux vidéo
+                const image = tf.browser.fromPixels(video);
+
+                // Détecter les objets dans l'image
+                const predictions = await model.detect(image);
+
+                // Afficher un message indiquant le nom du produit détecté, s'il y en a un
+                const productMessage = document.querySelector("#product-message");
+                if (predictions.length > 0) {
+                    const productName = predictions[0].class;
+                    productMessage.textContent = `Ceci est du ${productName}.`;
+                } else {
+                    productMessage.textContent = "";
+                }
+
+                // Libérer la mémoire utilisée par l'image
+                tf.dispose(image);
+
+                // Attendre une fraction de seconde avant de détecter le prochain objet
+                await new Promise(resolve => setTimeout(resolve, 100));
+            }
+        }
+
+        // Écouter les événements de détection de code barre
+        Quagga.onDetected(function(result
+        ) {
+        // Arrêter la caméra
+        Quagga.stop();
+
+        // Obtenir le lien associé au code barre détecté
+        const code = result.codeResult.code;
+        const url = `https://www.example.com/products/${code}`;
+
+        // Afficher le lien dans une nouvelle fenêtre
+        window.open(url, "_blank");
+    });
+</script>

@@ -7,7 +7,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <script>
-
+document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("input[type='submit']").forEach(function(button) {
+      button.addEventListener("click", function(event) {
+        event.preventDefault();
+        if (this.value === "Sign Up") {
+          window.location.href = "page2.html";
+        } else if (this.value === "Login") {
+          window.location.href = "page2.html";
+        }
+      });
+    });
+  });
 
 
 
@@ -19,13 +30,12 @@
    <header>
     <h1>Welcome to Healthy Eating App</h1>
     <h2>Eat Healthy, Live Better</h2>
-  </header>
+   </header>
 
   <p class="header-text">A new way to track and improve your eating habits</p>
 
   <!-- Add the form -->
   <form>
-    <input type="text" placeholder="Enter your name" required>
     <input type="email" placeholder="Enter your email" required>
     <input type="password" placeholder="Enter your password" required>
     <input type="submit" value="Sign Up">

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Scanner de codes barres</title>
+    <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
+</head>
+<body>
+    <h1>Scanner de codes barres</h1>
+    <div id="scanner-container"></div>
+    <div id="product-info"></div>
+    <script>
+        // Configurer QuaggaJS pour scanner les codes barres
+        Quagga.init({
+            inputStream: {
+                name: "Live",
+                type: "LiveStream",
+                target: document.querySelector("#scanner-container")
+            },
+            decoder: {
+                readers: ["ean_reader", "upc_reader", "code_128_reader"]
+            }
+        }, function(err) {
+            if (err) {
+                console.log(err);
+                return;
+            }
+
+            console.log("QuaggaJS prêt à scanner les codes barres.");
+
+            // Démarrer la caméra
+            Quagga.start();
+        });
+
+        // Écouter les événements de détection de code barre
+        Quagga.onDetected(function(result) {
+            console.log("Code barre détecté : ", result.codeResult.code);
+
+            fetch('https://world.openfoodfacts.org/api/v0/product/' + result.codeResult.code + '.json')
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+
+                    var productName = data.product.product_name;
+                    var nutriments = data.product.nutriments;
+                    var calories = nutriments.energy_value;
+                    var proteines = nutriments.proteins;
+                    var glucides = nutriments.carbohydrates;
+                    var lipides = nutriments.fat;
+                    var grasSatures = nutriments['saturated-fat'];
+                    var nutriScore = data.product.nutrition_grades;
+
+                    var productInfo = document.querySelector("#product-info");
+                    productInfo.innerHTML = "<h2>Informations nutritionnelles pour " + productName + " :</h2>" +
+                        "<ul>" +
+                        "<li>Calories : " + calories + "</li>" +
+                        "<li>Protéines : " + proteines + "</li>" +
+                        "<li>Glucides : " + glucides + "</li>" +
+                        "<li>Lipides : " + lipides + "</li>" +
+                        "<li>Graisses saturées : " + grasSatures + "</li>" +
+                        "<li>Nutriscore : " + nutriScore + "</li>" +
+                        "</ul>";
+                })
+                .catch(error => {
+                    console.error('Une erreur est survenue :', error);
+                });
+        });
+
+        // Arrêter QuaggaJS lorsque la page est fermée
+        window.onbeforeunload = function() {
+            Quagga.stop();
+        };
+    </script>
+</body>
+</html>

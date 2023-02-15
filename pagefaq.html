@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FAQ - Nourriture</title>
+    <link rel="stylesheet" href="faq.css">
+	<style>
+		
+	</style>
+</head>
+<body>
+	<header>
+        <h1>FAQ - Nourriture</h1>
+    </header>
+	<div class="faq-question">
+		<h3>Qu'est-ce qu'une alimentation équilibrée ?</h3>
+		<div class="faq-answer">
+			Une alimentation équilibrée est une alimentation qui fournit à l'organisme les nutriments dont il a besoin en quantités adéquates pour maintenir un état de santé optimal. Elle comprend généralement une variété d'aliments provenant de différents groupes alimentaires tels que les fruits et légumes, les céréales complètes, les protéines maigres et les matières grasses saines, tout en limitant les aliments riches en sucres ajoutés, en graisses saturées et en sel. Une alimentation équilibrée est importante pour maintenir un poids santé, prévenir les maladies chroniques telles que le diabète, les maladies cardiaques et certains cancers, ainsi que pour soutenir une bonne santé mentale et émotionnelle.
+		</div>
+	</div>
+	<div class="faq-question">
+		<h3>Comment savoir si j'ai une carence en vitamines ou minéraux ?</h3>
+		<div class="faq-answer">
+			Il est important de consulter un professionnel de la santé pour déterminer si vous avez une carence en vitamines ou minéraux. Les symptômes courants d'une carence en vitamines ou minéraux peuvent inclure la fatigue, une faiblesse musculaire, des douleurs articulaires, des problèmes de peau, une mauvaise vision, des saignements de nez fréquents, des infections récurrentes, une perte de cheveux, des douleurs abdominales et des problèmes de digestion, entre autres.
+<br>
+Un professionnel de la santé peut effectuer des tests sanguins pour évaluer votre taux de vitamines et minéraux, et vous aider à déterminer si vous avez une carence ou non. Si vous avez des préoccupations concernant une carence en vitamines ou minéraux, il est important de parler à votre médecin ou à un diététicien pour obtenir des conseils sur la façon d'améliorer votre alimentation et de prendre des suppléments si nécessaire.
+		</div>
+	</div>
+	<div class="faq-question">
+		<h3>Quels sont les avantages d'une alimentation riche en fibres ?</h3>
+		<div class="faq-answer">
+			Une alimentation riche en fibres peut aider à prévenir la constipation, à maintenir un poids santé, à réduire le risque de maladies cardiaques et de diabète, et à favoriser une digestion saine.
+		</div>
+	</div>
+	<script>
+		// Fonction pour afficher ou masquer la réponse lorsqu'on clique sur une question
+		const faqQuestions = document.querySelectorAll('.faq-question');
+		faqQuestions.forEach(function(question) {
+			question.addEventListener('click', function() {
+				this.querySelector('.faq-answer').classList.toggle('visible');
+			});
+		});
+	</script>
+</body>
+</html>
